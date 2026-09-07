@@ -1,0 +1,674 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#101c3d">
+  <meta name="description" content="خدمة تنظيف الأفران والخزنات في الدمام والخبر والقطيف.">
+  <title>نظافة تفرق | تنظيف أفران وخزنات</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #101c3d;
+      --navy-2: #172957;
+      --blue: #1f66e5;
+      --cyan: #22c5cf;
+      --orange: #ff855f;
+      --cream: #fffaf4;
+      --muted: #6d7894;
+      --white: #fff;
+      --line: rgba(16, 28, 61, .1);
+      --shadow: 0 22px 60px rgba(20, 40, 86, .13);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--navy);
+      background: var(--cream);
+      font-family: "Cairo", Tahoma, Arial, sans-serif;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+    .container { width: min(1120px, calc(100% - 36px)); margin: auto; }
+    .center { text-align: center; }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--blue);
+      font-size: .82rem;
+      font-weight: 800;
+      letter-spacing: .02em;
+    }
+    .eyebrow::before {
+      content: "";
+      width: 24px;
+      height: 3px;
+      border-radius: 99px;
+      background: var(--orange);
+    }
+    .section-head { max-width: 650px; margin: 0 auto 42px; text-align: center; }
+    .section-head h2 {
+      margin: 10px 0 12px;
+      font-size: clamp(1.8rem, 4vw, 2.65rem);
+      line-height: 1.3;
+      letter-spacing: -.04em;
+    }
+    .section-head p { margin: 0; color: var(--muted); }
+
+    /* Header */
+    header {
+      position: absolute;
+      z-index: 4;
+      top: 0;
+      right: 0;
+      left: 0;
+      padding: 20px 0;
+    }
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 11px;
+      color: var(--white);
+      font-weight: 900;
+      font-size: 1.1rem;
+    }
+    .brand-mark {
+      display: grid;
+      width: 48px;
+      height: 48px;
+      place-items: center;
+      border-radius: 16px;
+      color: var(--navy);
+      background: var(--white);
+      box-shadow: 0 10px 22px rgba(0,0,0,.12);
+    }
+    .brand-mark svg { width: 30px; height: 30px; }
+    .nav-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 17px;
+      border: 1px solid rgba(255,255,255,.3);
+      border-radius: 99px;
+      color: var(--white);
+      font-weight: 700;
+      font-size: .85rem;
+      transition: .25s ease;
+    }
+    .nav-link:hover { background: rgba(255,255,255,.14); transform: translateY(-2px); }
+
+    /* Hero */
+    .hero {
+      position: relative;
+      isolation: isolate;
+      min-height: 720px;
+      padding: 155px 0 115px;
+      color: var(--white);
+      background:
+        linear-gradient(110deg, rgba(10,24,57,.96) 10%, rgba(17,42,91,.84) 58%, rgba(17,42,91,.65)),
+        url("https://images.pexels.com/photos/6196226/pexels-photo-6196226.jpeg?auto=compress&cs=tinysrgb&w=1800") center/cover;
+      overflow: hidden;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      left: -10%;
+      bottom: -220px;
+      width: 120%;
+      height: 310px;
+      border-radius: 50% 50% 0 0;
+      background: var(--cream);
+      transform: rotate(-2deg);
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.08fr .92fr;
+      align-items: center;
+      gap: 60px;
+    }
+    .hero-copy { max-width: 650px; }
+    .hero-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 13px;
+      border: 1px solid rgba(255,255,255,.2);
+      border-radius: 99px;
+      color: #dffeff;
+      background: rgba(255,255,255,.09);
+      font-size: .78rem;
+      font-weight: 700;
+    }
+    .hero-pill span {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #42e7b2;
+      box-shadow: 0 0 0 5px rgba(66,231,178,.13);
+    }
+    h1 {
+      margin: 20px 0 17px;
+      font-size: clamp(2.35rem, 5.5vw, 4.65rem);
+      line-height: 1.16;
+      letter-spacing: -.07em;
+    }
+    h1 em { color: #68e3e3; font-style: normal; }
+    .hero-copy > p {
+      max-width: 560px;
+      margin: 0 0 28px;
+      color: #d2dcf1;
+      font-size: 1.04rem;
+    }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      min-height: 52px;
+      padding: 12px 21px;
+      border: 0;
+      border-radius: 15px;
+      font: inherit;
+      font-size: .92rem;
+      font-weight: 800;
+      cursor: pointer;
+      transition: transform .25s ease, box-shadow .25s ease, background .25s ease;
+    }
+    .btn:hover { transform: translateY(-3px); }
+    .btn-primary {
+      color: var(--navy);
+      background: var(--cyan);
+      box-shadow: 0 12px 28px rgba(34,197,207,.25);
+    }
+    .btn-primary:hover { box-shadow: 0 15px 34px rgba(34,197,207,.38); }
+    .btn-light { color: var(--navy); background: var(--white); }
+    .btn-outline { color: var(--white); border: 1px solid rgba(255,255,255,.3); background: transparent; }
+    .trust-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px 27px;
+      margin-top: 30px;
+      color: #d7e0f1;
+      font-size: .78rem;
+    }
+    .trust-row span { display: inline-flex; align-items: center; gap: 7px; }
+    .trust-row b { color: #ffcf67; font-size: 1rem; }
+    .hero-card {
+      position: relative;
+      max-width: 440px;
+      margin-inline: auto;
+      padding: 14px;
+      border: 1px solid rgba(255,255,255,.23);
+      border-radius: 30px;
+      background: rgba(255,255,255,.12);
+      box-shadow: 0 30px 80px rgba(0,0,0,.2);
+      backdrop-filter: blur(8px);
+      transform: rotate(2deg);
+    }
+    .hero-card img {
+      width: 100%;
+      aspect-ratio: 1 / 1.13;
+      object-fit: cover;
+      border-radius: 21px;
+    }
+    .hero-badge {
+      position: absolute;
+      right: -28px;
+      bottom: 36px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 16px;
+      border-radius: 17px;
+      color: var(--navy);
+      background: var(--white);
+      box-shadow: 0 16px 32px rgba(0,0,0,.2);
+      font-size: .78rem;
+      font-weight: 800;
+      transform: rotate(-4deg);
+    }
+    .hero-badge strong { color: var(--orange); font-size: 1.35rem; }
+
+    /* General sections */
+    section { padding: 88px 0; }
+    .stats {
+      position: relative;
+      z-index: 2;
+      margin-top: -40px;
+    }
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      overflow: hidden;
+      border-radius: 24px;
+      background: var(--white);
+      box-shadow: var(--shadow);
+    }
+    .stat { padding: 25px 20px; text-align: center; border-left: 1px solid var(--line); }
+    .stat:last-child { border-left: 0; }
+    .stat strong { display: block; color: var(--blue); font-size: 1.8rem; line-height: 1.2; }
+    .stat span { color: var(--muted); font-size: .8rem; }
+    .service-ticker {
+      overflow: hidden;
+      padding: 15px 0;
+      color: var(--white);
+      background: var(--blue);
+      box-shadow: 0 12px 28px rgba(31,102,229,.16);
+    }
+    .ticker-viewport { overflow: hidden; }
+    .ticker-track {
+      display: flex;
+      width: max-content;
+      align-items: center;
+      direction: ltr;
+      animation: ticker 24s linear infinite;
+    }
+    .ticker-track:hover { animation-play-state: paused; }
+    .ticker-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 18px;
+      padding-inline: 19px;
+      white-space: nowrap;
+      font-size: .88rem;
+      font-weight: 800;
+    }
+    .ticker-item b { color: #8df3ed; font-size: 1.1rem; }
+    @keyframes ticker { to { transform: translateX(-50%); } }
+    .soft-section { background: #f5f8ff; }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+    .service-card {
+      padding: 28px 23px;
+      border: 1px solid rgba(16,28,61,.07);
+      border-radius: 23px;
+      background: var(--white);
+      box-shadow: 0 10px 30px rgba(17, 40, 86, .05);
+      transition: .25s ease;
+    }
+    .service-card:hover { transform: translateY(-6px); box-shadow: 0 18px 40px rgba(17, 40, 86, .11); }
+    .service-icon {
+      display: grid;
+      width: 52px;
+      height: 52px;
+      margin-bottom: 18px;
+      place-items: center;
+      border-radius: 16px;
+      color: var(--blue);
+      background: #eaf1ff;
+      font-size: 1.45rem;
+    }
+    .service-card:nth-child(2) .service-icon { color: #e06a42; background: #fff0e9; }
+    .service-card:nth-child(3) .service-icon { color: #0b9d91; background: #e3fbf7; }
+    .service-card h3 { margin: 0 0 7px; font-size: 1.05rem; }
+    .service-card p { margin: 0; color: var(--muted); font-size: .84rem; }
+    .feature-layout {
+      display: grid;
+      grid-template-columns: .85fr 1.15fr;
+      align-items: center;
+      gap: 70px;
+    }
+    .feature-photo {
+      position: relative;
+      padding: 11px;
+      border-radius: 28px;
+      background: var(--white);
+      box-shadow: var(--shadow);
+    }
+    .feature-photo img { width: 100%; aspect-ratio: 1 / 1.08; object-fit: cover; border-radius: 20px; }
+    .photo-note {
+      position: absolute;
+      left: -22px;
+      bottom: 31px;
+      max-width: 175px;
+      padding: 14px 17px;
+      border-radius: 17px;
+      color: var(--white);
+      background: var(--orange);
+      box-shadow: 0 15px 26px rgba(255,133,95,.3);
+      font-size: .77rem;
+      font-weight: 800;
+      transform: rotate(-4deg);
+    }
+    .feature-copy h2 { margin: 11px 0 16px; font-size: clamp(1.8rem, 4vw, 2.75rem); line-height: 1.35; letter-spacing: -.05em; }
+    .feature-copy > p { margin: 0 0 24px; color: var(--muted); }
+    .check-list { display: grid; gap: 13px; margin: 0 0 27px; padding: 0; list-style: none; }
+    .check-list li { display: flex; align-items: flex-start; gap: 10px; font-size: .9rem; font-weight: 700; }
+    .check-list li::before {
+      content: "✓";
+      display: grid;
+      flex: 0 0 24px;
+      width: 24px;
+      height: 24px;
+      place-items: center;
+      border-radius: 50%;
+      color: #078b76;
+      background: #dff8f1;
+      font-size: .75rem;
+      font-weight: 900;
+    }
+    .reviews {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+    .review {
+      padding: 25px;
+      border-radius: 22px;
+      background: var(--white);
+      box-shadow: 0 10px 28px rgba(17,40,86,.06);
+    }
+    .stars { color: #ffb52f; letter-spacing: 2px; font-size: .92rem; }
+    .review p { min-height: 76px; margin: 15px 0 20px; color: #4f5d7c; font-size: .86rem; }
+    .reviewer { display: flex; align-items: center; gap: 10px; }
+    .avatar {
+      display: grid;
+      width: 37px;
+      height: 37px;
+      place-items: center;
+      border-radius: 50%;
+      color: var(--white);
+      background: var(--navy);
+      font-weight: 800;
+      font-size: .76rem;
+    }
+    .reviewer strong { display: block; font-size: .8rem; }
+    .reviewer span { display: block; color: var(--muted); font-size: .7rem; }
+    .cta {
+      position: relative;
+      overflow: hidden;
+      color: var(--white);
+      background: var(--navy);
+    }
+    .cta::before, .cta::after {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      border: 1px solid rgba(104,227,227,.18);
+    }
+    .cta::before { width: 450px; height: 450px; top: -310px; left: -80px; }
+    .cta::after { width: 300px; height: 300px; right: -100px; bottom: -200px; }
+    .cta-inner { position: relative; z-index: 1; }
+    .cta h2 { margin: 10px 0 10px; font-size: clamp(1.8rem, 4vw, 2.65rem); line-height: 1.35; }
+    .cta p { margin: 0 auto 24px; max-width: 560px; color: #c6d3ee; font-size: .95rem; }
+    footer { padding: 28px 0 32px; color: #6e7891; background: #0a1430; text-align: center; }
+    footer p { margin: 5px 0; font-size: .76rem; }
+    .designer { color: var(--cyan); font-weight: 800; }
+    .designer:hover { color: var(--white); }
+
+    /* Floating contact buttons */
+    .floating-contact {
+      position: fixed;
+      z-index: 10;
+      right: 19px;
+      bottom: 19px;
+      display: grid;
+      gap: 10px;
+    }
+    .float-btn {
+      position: relative;
+      display: grid;
+      width: 56px;
+      height: 56px;
+      place-items: center;
+      border-radius: 50%;
+      color: var(--white);
+      box-shadow: 0 10px 24px rgba(10,25,60,.23);
+      transition: transform .25s ease;
+    }
+    .float-btn:hover { transform: scale(1.1) translateY(-3px); }
+    .float-btn svg { width: 25px; height: 25px; fill: currentColor; }
+    .float-phone { background: var(--blue); animation: bob 2.8s ease-in-out infinite; }
+    .float-whatsapp { background: #19b878; animation: bob 2.8s .25s ease-in-out infinite; }
+    .float-btn::before {
+      content: "";
+      position: absolute;
+      inset: -5px;
+      border: 1px solid currentColor;
+      border-radius: 50%;
+      opacity: .28;
+      animation: ring 2.3s ease-out infinite;
+    }
+    @keyframes ring { 0% { transform: scale(.84); opacity: .45; } 75%,100% { transform: scale(1.27); opacity: 0; } }
+    @keyframes bob { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-4px); } }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; }
+    }
+    @media (max-width: 850px) {
+      .hero { min-height: auto; padding: 130px 0 125px; }
+      .hero-grid, .feature-layout { grid-template-columns: 1fr; gap: 42px; }
+      .hero-copy { margin: auto; text-align: center; }
+      .hero-copy > p { margin-inline: auto; }
+      .hero-actions, .trust-row { justify-content: center; }
+      .hero-card { max-width: 390px; }
+      .feature-layout { max-width: 650px; margin: auto; }
+      .feature-copy { text-align: center; }
+      .check-list { text-align: right; max-width: 420px; margin-inline: auto; }
+      .feature-copy .btn { margin-inline: auto; }
+    }
+    @media (max-width: 620px) {
+      .container { width: min(100% - 28px, 520px); }
+      header { padding-top: 14px; }
+      .brand { font-size: .94rem; }
+      .brand-mark { width: 42px; height: 42px; border-radius: 13px; }
+      .nav-link { padding: 8px 11px; font-size: .74rem; }
+      .hero { padding-top: 115px; }
+      .hero::after { bottom: -250px; }
+      h1 { font-size: clamp(2.15rem, 12vw, 3.25rem); }
+      .hero-copy > p { font-size: .91rem; }
+      .hero-actions .btn { width: 100%; }
+      .hero-card { max-width: 300px; }
+      .hero-badge { right: -12px; bottom: 22px; padding: 10px 12px; font-size: .7rem; }
+      .ticker-item { padding-inline: 13px; font-size: .78rem; }
+      .stats-grid { grid-template-columns: 1fr; }
+      .stat { border-left: 0; border-bottom: 1px solid var(--line); padding: 15px; }
+      .stat:last-child { border-bottom: 0; }
+      section { padding: 68px 0; }
+      .services-grid, .reviews { grid-template-columns: 1fr; }
+      .review p { min-height: auto; }
+      .photo-note { left: -7px; bottom: 22px; }
+      .floating-contact { right: 12px; bottom: 12px; }
+      .float-btn { width: 51px; height: 51px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#home" aria-label="نظافة تفرق">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M10 27.5h20M13 24V12.7c0-1.5 1.2-2.7 2.7-2.7h8.6c1.5 0 2.7 1.2 2.7 2.7V24" stroke="#1F66E5" stroke-width="3" stroke-linecap="round"/>
+            <path d="M9 29.5h22M17 16h6M20 9V5" stroke="#FF855F" stroke-width="3" stroke-linecap="round"/>
+            <path d="M11 34c1.7-1.4 3.3-1.4 5 0 1.7 1.4 3.3 1.4 5 0 1.7-1.4 3.3-1.4 5 0 1.7 1.4 3.3 1.4 5 0" stroke="#22C5CF" stroke-width="2.5" stroke-linecap="round"/>
+          </svg>
+        </span>
+        <span>نظافة تفرق</span>
+      </a>
+      <a class="nav-link" href="tel:0540488065">اتصل الآن <span>↗</span></a>
+    </div>
+  </header>
+
+  <main id="home">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <span class="hero-pill"><span></span> خدمة موثوقة في منطقتك</span>
+          <h1>نظافة تفرق<br><em>من أول لمعة.</em></h1>
+          <p>تنظيف احترافي للأفران والخزنات بعناية فائقة، نرجّع لك نظافة المكان وإحساسه الجديد بدون تعب.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="tel:0540488065">☎ احجز عبر الاتصال</a>
+            <a class="btn btn-light" href="https://wa.me/966540488065?text=مرحباً،%20أرغب%20في%20حجز%20خدمة%20تنظيف" target="_blank" rel="noopener">واتساب ←</a>
+          </div>
+          <div class="trust-row">
+            <span><b>★★★★★</b> تقييم 5.0</span>
+            <span>✓ خدمة منزلية</span>
+            <span>✓ مواعيد مرنة</span>
+          </div>
+        </div>
+        <div class="hero-card">
+          <img src="https://images.pexels.com/photos/6196226/pexels-photo-6196226.jpeg?auto=compress&cs=tinysrgb&w=900" alt="عامل تنظيف محترف">
+          <div class="hero-badge"><strong>5.0</strong><span>ثقة عملائنا<br>هي أولويتنا</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="stats" aria-label="إحصائيات الخدمة">
+      <div class="container">
+        <div class="stats-grid">
+          <div class="stat"><strong>3</strong><span>مدن نخدمها</span></div>
+          <div class="stat"><strong>100%</strong><span>اهتمام بالتفاصيل</span></div>
+          <div class="stat"><strong>24/7</strong><span>استقبال الحجوزات</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="service-ticker" aria-label="شريط الخدمات المتحرك">
+      <div class="ticker-viewport">
+        <div class="ticker-track">
+          <span class="ticker-item" dir="rtl">تنظيف الأفران <b>✦</b></span>
+          <span class="ticker-item" dir="rtl">تنظيف الخزنات <b>✦</b></span>
+          <span class="ticker-item" dir="rtl">تعقيم وتلميع <b>✦</b></span>
+          <span class="ticker-item" dir="rtl">خدمة منزلية <b>✦</b></span>
+          <span class="ticker-item" dir="rtl">الدمام · الخبر · القطيف <b>✦</b></span>
+          <span class="ticker-item" dir="rtl">تنظيف الأفران <b>✦</b></span>
+          <span class="ticker-item" dir="rtl">تنظيف الخزنات <b>✦</b></span>
+          <span class="ticker-item" dir="rtl">تعقيم وتلميع <b>✦</b></span>
+          <span class="ticker-item" dir="rtl">خدمة منزلية <b>✦</b></span>
+          <span class="ticker-item" dir="rtl">الدمام · الخبر · القطيف <b>✦</b></span>
+        </div>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">خدماتنا</span>
+          <h2>نظافة أعمق، وراحة أكبر</h2>
+          <p>حلول عملية ومركزة للمناطق التي تحتاج عناية خاصة داخل منزلك.</p>
+        </div>
+        <div class="services-grid">
+          <article class="service-card">
+            <div class="service-icon">♨</div>
+            <h3>تنظيف الأفران</h3>
+            <p>إزالة الدهون والبقايا المتراكمة بعناية ليعود فرنك نظيفاً وجاهزاً.</p>
+          </article>
+          <article class="service-card">
+            <div class="service-icon">▦</div>
+            <h3>تنظيف الخزنات</h3>
+            <p>تنظيف وترتيب الخزنات من الداخل والخارج مع اهتمام بكل زاوية.</p>
+          </article>
+          <article class="service-card">
+            <div class="service-icon">✦</div>
+            <h3>لمسات نهائية</h3>
+            <p>تعقيم وتلميع ونتيجة مرتبة تمنح المكان مظهراً منعشاً يدوم.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="soft-section">
+      <div class="container feature-layout">
+        <div class="feature-photo">
+          <img src="https://images.pexels.com/photos/6196224/pexels-photo-6196224.jpeg?auto=compress&cs=tinysrgb&w=900" alt="عامل خدمة يرتدي زي العمل">
+          <div class="photo-note">نشتغل بذمة<br>ونترك المكان يلمع ✨</div>
+        </div>
+        <div class="feature-copy">
+          <span class="eyebrow">لماذا نحن؟</span>
+          <h2>لأن التفاصيل الصغيرة<br>تصنع الفرق الكبير</h2>
+          <p>نصل إلى بيتك في الدمام والخبر والقطيف، ونقدم خدمة واضحة من أول تواصل حتى آخر لمسة.</p>
+          <ul class="check-list">
+            <li>فريق ملتزم ومحترف في التعامل</li>
+            <li>تنظيف دقيق يناسب احتياج كل حالة</li>
+            <li>حجز سريع ومواعيد تناسب يومك</li>
+          </ul>
+          <a class="btn btn-primary" href="#contact">أريد حجز موعد</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="reviews">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">آراء العملاء</span>
+          <h2>كلام يفرّحنا من ناس جرّبونا</h2>
+          <p>رضا العميل عندنا ليس إضافة، بل هو معيار الخدمة.</p>
+        </div>
+        <div class="reviews">
+          <article class="review">
+            <div class="stars">★★★★★</div>
+            <p>“شغل مرتب وسريع، الفرن رجع كأنه جديد. التعامل محترم جداً وأنصح فيهم.”</p>
+            <div class="reviewer"><span class="avatar">ن</span><div><strong>نورة العتيبي</strong><span>الخبر</span></div></div>
+          </article>
+          <article class="review">
+            <div class="stars">★★★★★</div>
+            <p>“النتيجة ممتازة والتفاصيل واضحة من البداية. التزام بالموعد ونظافة تشرح الصدر.”</p>
+            <div class="reviewer"><span class="avatar">س</span><div><strong>سارة القحطاني</strong><span>الدمام</span></div></div>
+          </article>
+          <article class="review">
+            <div class="stars">★★★★★</div>
+            <p>“نظفوا الخزنات بعناية وتركوا المكان مرتب. خدمة تستاهل التجربة وبكل ثقة.”</p>
+            <div class="reviewer"><span class="avatar">م</span><div><strong>محمد الحربي</strong><span>القطيف</span></div></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="cta">
+      <div class="container cta-inner center">
+        <span class="eyebrow">جاهزين لخدمتك</span>
+        <h2>خلّ النظافة علينا</h2>
+        <p>اتصل الآن أو أرسل لنا على واتساب، ونرتب لك الموعد المناسب في الدمام أو الخبر أو القطيف.</p>
+        <div class="hero-actions" style="justify-content:center">
+          <a class="btn btn-primary" href="tel:0540488065">☎ 0540488065</a>
+          <a class="btn btn-outline" href="https://wa.me/966540488065?text=مرحباً،%20أرغب%20في%20حجز%20خدمة%20تنظيف" target="_blank" rel="noopener">تواصل واتساب</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="floating-contact" aria-label="خيارات التواصل السريع">
+    <a class="float-btn float-phone" href="tel:0540488065" aria-label="اتصال مباشر" title="اتصال مباشر">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8c1.6 3.1 3.5 4.7 6.6 6.6l2.2-2.2c.3-.3.7-.4 1.1-.2 1 .3 2 .5 3 .5.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C11 21 3 13 3 3.5c0-.6.4-1 1-1H7.5c.6 0 1 .4 1 1 0 1 .2 2 .5 3 .1.4 0 .8-.2 1.1l-2.2 2.2Z"/></svg>
+    </a>
+    <a class="float-btn float-whatsapp" href="https://wa.me/966540488065?text=مرحباً،%20أرغب%20في%20حجز%20خدمة%20تنظيف" target="_blank" rel="noopener" aria-label="واتساب" title="واتساب">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a9.9 9.9 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2Zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-3.1.8.8-3-.2-.3A8 8 0 1 1 12 20Zm4.4-5.9c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.6.1l-.7.9c-.1.2-.3.2-.5.1a6.5 6.5 0 0 1-3.2-2.8c-.2-.3.2-.3.6-1.1.1-.2 0-.4 0-.5l-.7-1.7c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.2-.9.9-.9 2.1s.9 2.4 1 2.5c.1.2 1.8 2.8 4.4 3.9 2.6 1 2.6.7 3.1.7s1.6-.6 1.8-1.2c.2-.6.2-1.1.1-1.2Z"/></svg>
+    </a>
+  </div>
+
+  <footer>
+    <div class="container">
+      <p>© 2026 نظافة تفرق — تنظيف أفران وخزنات في المنطقة الشرقية</p>
+      <p>تم التصميم بواسطة <a class="designer" href="https://wa.me/201029095046?text=مرحباً%20م.%20نجوى،%20أرغب%20في%20الاستفسار%20عن%20التصميم" target="_blank" rel="noopener">م. نجوى إبراهيم</a></p>
+    </div>
+  </footer>
+
+  <!-- TikTok Pixel Code Start -->
+  <script>
+  !function (w, d, t) {
+    w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie","holdConsent","revokeConsent","grantConsent"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var r="https://analytics.tiktok.com/i18n/pixel/events.js",o=n&&n.partner;ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=r,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};n=document.createElement("script");n.type="text/javascript",n.async=!0,n.src=r+"?sdkid="+e+"&lib="+t;e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(n,e)};
+    ttq.load('DACJAERC77U47UVQFLD0');
+    ttq.page();
+  }(window, document, 'ttq');
+  </script>
+  <!-- TikTok Pixel Code End -->
+</body>
+</html>
